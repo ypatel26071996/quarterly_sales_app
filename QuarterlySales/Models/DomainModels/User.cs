@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace QuarterlySales.Models.DomainModels
 {
+	/*
+	The User class is the domain class for the user object
+	*/
     public class User
     {
         [Key]

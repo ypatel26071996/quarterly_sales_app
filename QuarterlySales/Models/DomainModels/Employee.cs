@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace QuarterlySales.Models
 {
+	/*
+	The employee class is the domain class for the employee object
+	*/
     public class Employee
     {
         public int EmployeeId { get; set; }

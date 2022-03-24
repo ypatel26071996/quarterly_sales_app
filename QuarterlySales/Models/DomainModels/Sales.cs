@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace QuarterlySales.Models
 {
+	/*
+	The sales class is the domain class for the Sales object
+	*/
     public class Sales
     {
         public int SalesId { get; set; }
