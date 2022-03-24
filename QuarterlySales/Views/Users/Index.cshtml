@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuarterlySales.Models.DomainModels.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Manage Users</h1>
+
+<p>
+    <a asp-action="Create">Add a User</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Roles
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @if (item.isAdmin)
+                {
+                    <span>Admin</span>
+                }
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.username" class="btn btn-primary">Delete User</a>
+            </td>
+            <td>
+                <a asp-action="AddToAdmin" asp-route-id="@item.username"  class="btn btn-primary">Add To Admin</a>
+            </td>
+            <td>
+                <a asp-action="RemoveFromAdmin" asp-route-id="@item.username"  class="btn btn-primary">Remove From Admin</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
